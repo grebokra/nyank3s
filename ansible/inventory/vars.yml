@@ -1,0 +1,3 @@
+---
+k3s_api_endpoint: "{{ hostvars['master0']['ansible_facts']['eth0']['ipv4']['address'] }}"
+

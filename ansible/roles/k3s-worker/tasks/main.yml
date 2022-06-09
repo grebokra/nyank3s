@@ -1,0 +1,17 @@
+---
+- block:
+    - name: Ensure service file copied
+      template:
+        src: "k3s.service.j2"
+        dest: "/usr/lib/systemd/system/k3s-worker.service"
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Ensure service enabled
+      systemd:
+        name: k3s-worker
+        daemon_reload: yes
+        state: restarted
+        enabled: yes
+

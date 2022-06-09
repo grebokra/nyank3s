@@ -1,0 +1,10 @@
+---
+- block:
+    - name: Fetch k3s binary for amd64
+      get_url:
+        url: "{{ k3s_amd64_download_url }}"
+        dest: /usr/local/bin/k3s
+        owner: root
+        group: root
+        mode: 0755
+
