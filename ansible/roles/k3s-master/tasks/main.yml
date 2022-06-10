@@ -7,13 +7,10 @@
         owner: root
         group: root
         mode: 0644
+      notify: "Ensure k3s-master service reloaded, restarted and enabled"
 
-    - name: Ensure service enabled
-      systemd:
-        name: k3s-master
-        daemon_reload: yes
-        state: restarted
-        enabled: yes
+    - name: Flush handlers
+      meta: flush_handlers
 
     - name: Wait for node-token
       wait_for:

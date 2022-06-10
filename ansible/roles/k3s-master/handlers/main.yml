@@ -1,0 +1,7 @@
+---
+- name: Ensure k3s-master service reloaded, restarted and enabled
+  service:
+    name: k3s-master
+    daemon_reload: true
+    state: restarted
+    enabled: yes
