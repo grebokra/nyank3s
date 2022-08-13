@@ -2,24 +2,18 @@
 - hosts: fleet
   become: yes
   remote_user: root
-  vars_files:
-    - inventory/vars.yml
   roles:
     - role: common
 
 - hosts: masters
   become: yes
   remote_user: root
-  vars_files:
-    - inventory/vars.yml
   roles:
     - role: k3s-master
 
 - hosts: workers
   become: yes
   remote_user: root
-  vars_files:
-    - inventory/vars.yml
   roles:
     - role: k3s-worker
 
