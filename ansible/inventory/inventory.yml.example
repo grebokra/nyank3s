@@ -2,16 +2,17 @@
 masters:
   hosts:
     master0:
-      ansible_host:
+      ansible_host: 10.54.32.8
+      ansible_user: ec2-user
 
 workers:
   hosts:
     worker0:
-      ansible_host:
+      ansible_host: 10.54.32.9
+      ansible_user: ec2-user
     worker1:
-      ansible_host:
-    worker2:
-      ansible_host:
+      ansible_host: 10.54.32.10
+      ansible_user: ec2-user
 
 fleet:
   children:
